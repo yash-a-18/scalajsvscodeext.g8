@@ -1,0 +1,28 @@
+{
+	"name": "$name$",
+	"displayName": "$name$",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.84.0"
+	},
+	"publisher": "com.axiommd",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:$extensionprefix$.helloWorld"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "$extensionprefix$.helloWorld",
+				"title": "Hello Arnold"
+			}
+		]
+	},
+	"devDependencies": {
+		"@scala-js/vite-plugin-scalajs": "^1.0.0"
+	}
+}
