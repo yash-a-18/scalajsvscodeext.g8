@@ -29,7 +29,7 @@ def openVSCodeTask: Def.Initialize[Task[Unit]] =
 lazy val root = project
   .in(file("."))
   .settings(
-    scalaVersion := "3.3.1",
+    scalaVersion := "3.5.0",
     moduleName := "vscode-scalajs-hello",
     Compile / fastOptJS / artifactPath := baseDirectory.value / "out" / "extension.js",
     Compile / fullOptJS / artifactPath := baseDirectory.value / "out" / "extension.js",
