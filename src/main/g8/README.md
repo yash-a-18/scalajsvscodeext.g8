@@ -4,6 +4,9 @@ This Project is a port of the [helloworld-minimal-sample] to [ScalaJS]. It is ba
 
 Please check there on how to describe a VSCode Extension.
 
+#Important Note
+I could not get scalatest to work after multiple attempts.  Since this is front end work, get testing done on dependencies
+
 ## Your first Extension
 A step-by-step tutorial for **ScalaJS** using this example project.
 
