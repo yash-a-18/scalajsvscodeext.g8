@@ -4,7 +4,7 @@
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.84.0"
+		"vscode": "^1.90.0"
 	},
 	"publisher": "com.axiommd",
 	"categories": [
@@ -24,5 +24,9 @@
 	},
 	"devDependencies": {
 		"@scala-js/vite-plugin-scalajs": "^1.0.0"
+	},
+	"dependencies": {
+		"@types/vscode": "^1.94.0"
 	}
+
 }
