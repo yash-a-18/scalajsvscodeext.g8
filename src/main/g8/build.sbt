@@ -29,16 +29,15 @@ def openVSCodeTask: Def.Initialize[Task[Unit]] =
 lazy val root = project
   .in(file("."))
   .settings(
-    scalaVersion := "3.5.0",
+    scalaVersion := DependencyVersions.scala,
     moduleName := "$name$",
     Compile / fastOptJS / artifactPath := baseDirectory.value / "out" / "extension.js",
     Compile / fullOptJS / artifactPath := baseDirectory.value / "out" / "extension.js",
     open := openVSCodeTask.dependsOn(Compile / fastOptJS).value,
-    libraryDependencies ++= Seq(
-      // ScalablyTyped.V.vscode,
-      "com.lihaoyi" %%% "utest" % "0.8.2" % "test"
-    ),
-    Compile / npmDependencies ++= Seq("@types/vscode" -> "1.84.1"),
+        // CommonJS
+    scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule) },
+
+    // Compile / npmDependencies ++= Seq("@types/vscode" -> "1.84.1"),
     // Tell ScalablyTyped that we manage `npm install` ourselves
     externalNpm := baseDirectory.value,
 
@@ -47,6 +46,6 @@ lazy val root = project
   )
   .enablePlugins(
     ScalaJSPlugin,
-    ScalablyTypedConverterExternalNpmPlugin,
-    ScalablyTypedConverterPlugin
+    ScalablyTypedConverterExternalNpmPlugin
+    // ScalablyTypedConverterPlugin
   )
