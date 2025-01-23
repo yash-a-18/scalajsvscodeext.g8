@@ -36,6 +36,7 @@ lazy val root = project
     open := openVSCodeTask.dependsOn(Compile / fastOptJS).value,
         // CommonJS
     scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule) },
+    libraryDependencies ++= Dependencies.scalatest.value,
 
     // Compile / npmDependencies ++= Seq("@types/vscode" -> "1.84.1"),
     // Tell ScalablyTyped that we manage `npm install` ourselves
