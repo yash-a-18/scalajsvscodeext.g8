@@ -1,4 +1,4 @@
-# vscode-scalajs-hello
+# vscode-scalajs-aurora
 
 This Project is a port of the [helloworld-minimal-sample] to [ScalaJS]. It is based on the extension [accessible-scala].
 
@@ -22,7 +22,7 @@ Here is the original: [visualstudio.com/api/get-started](https://code.visualstud
   This will run `fastOptJS`and then open the Extension Host of _VSCode_.
 
 * Run the Hello World command from the Command Palette (`⇧⌘P`) in the new VSCode window.
-* Type `hello` and select `Hello Arnold`.
+* Type `hello` and select `Hello Aurora`.
 * Enter any text in the edit box in that location
   * You should see a Notification _Hello World _yourtext_
 

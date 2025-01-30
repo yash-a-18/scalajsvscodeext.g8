@@ -11,14 +11,32 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:$extensionprefix$.helloWorld"
+		"onCommand:$extensionprefix$.aurora"
 	],
 	"main": "./out/extension",
 	"contributes": {
+		"languages": [
+            {
+                "id": "aurora",
+                "aliases": [
+                    "Aurora",
+                    "aurora"
+                ],
+                "extensions": [".aurora"],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "aurora",
+                "scopeName": "source.aurora",
+                "path": "syntaxes/aurora.tmLanguage.json"
+            }
+        ],
 		"commands": [
 			{
-				"command": "$extensionprefix$.helloWorld",
-				"title": "Hello Arnold"
+				"command": "$extensionprefix$.aurora",
+				"title": "Hello Aurora"
 			}
 		]
 	},
