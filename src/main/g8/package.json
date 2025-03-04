@@ -38,7 +38,7 @@
                 {
                     "id": "aurora-container",
                     "title": "Aurora",
-                    "icon": "$(symbol-structure)"
+                    "icon": "\$(symbol-structure)"
                 }
             ]
         },
