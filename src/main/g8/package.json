@@ -33,6 +33,24 @@
                 "path": "syntaxes/aurora.tmLanguage.json"
             }
         ],
+		"viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "aurora-container",
+                    "title": "Aurora",
+                    "icon": "$(symbol-structure)"
+                }
+            ]
+        },
+        "views": {
+            "aurora-container": [
+                {
+                    "id": "aurora",
+                    "type": "webview",
+                    "name": "Patient Care Scenario"
+                }
+            ]
+        },
 		"commands": [
 			{
 				"command": "$extensionprefix$.aurora",
