@@ -34,7 +34,7 @@ trait LanguageClientOptions extends js.Object {
 }
 
 @js.native
-@JSGlobal
+@JSImport("vscode-languageclient/node", "LanguageClient")
 class LanguageClient(name: String, displayName: String, serverOptions: ServerOptions, clientOptions: LanguageClientOptions) extends js.Object {
   def start(): Unit = js.native
   def stop(): js.Promise[Unit] = js.native
@@ -80,9 +80,9 @@ object $extensionprefix$ {
   }
 
   private def startLanguageClient(context: ExtensionContext): LanguageClient = {
-    val serverModule = context.asAbsolutePath("out/language/main.cjs")
+    val serverModule = context.asAbsolutePath("node_modules/aurora-langium/dist/cjs/language/main.cjs")
     val debugOptions = js.Dynamic.literal(
-      execArgv = js.Array("--nolazy", s"--inspect\${if (js.Dynamic.global.process.env.DEBUG_BREAK.asInstanceOf[Boolean]) "-brk" else ""}=\${js.Dynamic.global.process.env.DEBUG_SOCKET.getOrElse("6009")}")
+      execArgv = js.Array("--nolazy", "--inspect=6009")
     )
 
     val serverOptions = js.Dynamic.literal(
