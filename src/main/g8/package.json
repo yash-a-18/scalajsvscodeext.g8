@@ -45,7 +45,7 @@
                     "id": "aurora",
                     "type": "webview",
                     "name": "Patient Care Scenario",
-                    "icon": "$(symbol-structure)"
+                    "icon": "\$(symbol-structure)"
                 }
             ]
         },
