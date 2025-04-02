@@ -4,8 +4,12 @@ lazy val installDependencies = Def.task[Unit] {
   val base = (ThisProject / baseDirectory).value
   val log = (ThisProject / streams).value.log
   if (!(base / "node_module").exists) {
+    
+    val isWindows = System.getProperty("os.name").toLowerCase.contains("win")
+    
+    val npmCommand = if (isWindows) "npm.cmd" else "npm"
     val pb =
-      new java.lang.ProcessBuilder("npm.cmd", "install")
+      new java.lang.ProcessBuilder(npmCommand, "install")  
         .directory(base)
         .redirectErrorStream(true)
 
@@ -21,11 +25,16 @@ def openVSCodeTask: Def.Initialize[Task[Unit]] =
       val log = streams.value.log
 
       val path = base.getCanonicalPath
-      s"code.cmd --extensionDevelopmentPath=\$path" ! log
+    
+      val isWindows = System.getProperty("os.name").toLowerCase.contains("win")
+     
+      val command = if (isWindows) "code.cmd" else "code"
+      s"$command --extensionDevelopmentPath=$path" ! log 
       ()
     }
     // .dependsOn(installDependencies)
 
+// Rest of the file remains EXACTLY THE SAME ▼▼▼
 lazy val root = project
   .in(file("."))
   .settings(
